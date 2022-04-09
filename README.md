@@ -1,6 +1,8 @@
 # OnlineBiding
-# Challagees
-1. 
+# Challenges
+1. couldn't give enough time 
+2. biding should have larger ammount than the last bid, couldn't do it.
+3. Deployment in heroku is incompleted.
 
 # packages
 1. asgiref==3.5.0
