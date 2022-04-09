@@ -29,9 +29,14 @@ class CustomerRegistrationFrom(UserCreationForm):
     customer.email = self.cleaned_data.get('email')
     customer.save()
     return user
-
+    
 class BidForm(forms.ModelForm):
   auctionEndTime= forms.TimeField(widget=forms.NumberInput(attrs={'type': 'time'}))
   class Meta:
-    model  = Product
-    exclude = ['user']
+    model = Product
+    exclude = ('user',)
+
+class Bidamount(forms.ModelForm):
+  class Meta:
+    model = Bid
+    fields=['bid_amount']

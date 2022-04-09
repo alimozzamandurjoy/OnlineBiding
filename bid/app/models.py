@@ -24,8 +24,15 @@ class Product(models.Model):
 
   def __str__(self):
     return str(self.id)
+
   def get_absolute_url(self):
     return reverse('product-detail', args=[str(self.id)])
 
+class Bid(models.Model):
+  product = models.ForeignKey(Product,on_delete=models.CASCADE)
+  user = models.ForeignKey(Customer,on_delete=models.CASCADE)
+  bid_amount = models.CharField(max_length=20)
 
+  def __str__(self):
+    return str(self.id)
 

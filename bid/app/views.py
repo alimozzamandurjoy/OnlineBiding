@@ -83,3 +83,22 @@ def mypostitems(request,pk):
   customer = Customer.objects.get(user_id=request.user.id )
   product = Product.objects.filter(user=Customer.objects.get(user_id=request.user.id))
   return render(request, 'app/mypostitems.html',{'customer':customer,'product':product})
+def bidamountform(request,pk):
+  url=request.META.get('HTTP_REFERER')
+  
+  bid=Bid.objects.filter(product=pk)
+  if request.method == 'POST':
+    form = Bidamount(request.POST)
+    if form.is_valid():
+      instance=form.instance.product = Product.objects.get(pk=pk)
+      instance = form.save(commit=False)
+      form.instance.user = Customer.objects.get(user_id=request.user.id)
+      instance.save()
+      return redirect(url)
+  else:
+    form = Bidamount()
+  return render(request,'app/bidamount.html',{'form':form,'bid':bid})
+
+def bidamountdata(request):
+  bid = Bid.objects.all()
+  return render(request, 'app/bid.html',{'bid':bid})

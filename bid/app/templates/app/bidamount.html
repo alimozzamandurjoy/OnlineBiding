@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block main-content %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {{ form | crispy }}
+        <br>
+        <input type="submit" value="Bid" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+
+        {% for b in bid %}
+        <tbody>
+          <td>{{b.user.user.username}}</td>
+          <td>{{b.bid_amount}}</td>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock main-content %}
