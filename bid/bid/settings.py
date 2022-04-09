@@ -56,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bid.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {

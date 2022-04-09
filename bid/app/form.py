@@ -31,6 +31,7 @@ class CustomerRegistrationFrom(UserCreationForm):
     return user
 
 class BidForm(forms.ModelForm):
+  auctionEndTime= forms.TimeField(widget=forms.NumberInput(attrs={'type': 'time'}))
   class Meta:
     model  = Product
     exclude = ['user']
