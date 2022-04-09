@@ -1,10 +1,6 @@
-import email
-from operator import mod
-from shutil import _ntuple_diskusage
-from statistics import mode
-from unicodedata import name
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 # Create your models here.
 
 class User(AbstractUser):
@@ -24,10 +20,12 @@ class Product(models.Model):
   description = models.TextField()
   photo = models.ImageField(upload_to='images')
   min_bid_price= models.CharField(max_length=50)
-  auctionEndTime=models.DateTimeField(auto_now_add=True)
+  auctionEndTime=models.TimeField()
 
   def __str__(self):
     return str(self.id)
+  def get_absolute_url(self):
+    return reverse('product-detail', args=[str(self.id)])
 
 
 

@@ -29,4 +29,8 @@ class CustomerRegistrationFrom(UserCreationForm):
     customer.email = self.cleaned_data.get('email')
     customer.save()
     return user
-    
+
+class BidForm(forms.ModelForm):
+  class Meta:
+    model  = Product
+    exclude = ['user']

@@ -9,4 +9,7 @@ urlpatterns=[
   path('login/',views.login_request, name='login'),
   path('logout/',views.logout_view, name='logout'),
   path('',views.home, name='home'),
+  path('profile/', views.profile, name='profile'),
+  path('bidform/', views.bidform, name="bidform"),
+  path('items/<str:pk>/', views.mypostitems, name="items"),
 ]

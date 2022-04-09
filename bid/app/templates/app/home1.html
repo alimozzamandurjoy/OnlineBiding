@@ -1,15 +1,17 @@
 {% extends 'app/base.html' %}
-
 {% block main-content %}
+ 
 
 <div class="container my-5">
-  <center><h1>Dashboard</h1></center>
+  <center>
+    <h1>Dashboard</h1>
+  </center>
   <br><br>
   <div class="row">
-  <div class="col-md 8"></div>
-  <div class="col-md-4 text-center">
-    <a href="{% url 'bidform' %}" role="button" class="btn btn-primary">Create Product</a>
-  </div>
+    <div class="col-md 8"></div>
+    <div class="col-md-4 text-center">
+      <a href="{% url 'bidform' %}" role="button" class="btn btn-primary">Create Product</a>
+    </div>
   </div>
   <br><br>
   <div class="row">
@@ -28,5 +30,4 @@
     {% endfor %}
   </div>
 </div>
-
 {% endblock main-content %}

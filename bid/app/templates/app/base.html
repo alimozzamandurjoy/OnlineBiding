@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-        <a class="nav-link" href="#">NextApp1</a>
+        <a class="nav-link" href="{% url 'items' user.id %}">My Posted Item</a>
         <a class="nav-link" href="#">NextApp2</a>
         <a class="nav-link" href="#">NextApp3</a>
         <a class="nav-link" href="#">About Us</a>
@@ -44,7 +44,7 @@
   </nav>
   {% block main-content %}
   {% endblock main-content %}
-
+  <br>
   <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
     
     <div class="container p-4"></div>

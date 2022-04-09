@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Details{% endblock title %}
+
+{% block main-content %}
+
+<div class="container" style="padding-top: 80px;">
+  <div class="row">
+    <div class="col-md-5">
+      <img src="{{ object.photo.url }}" alt="" style="width: 100%; height: 50vh;">
+    </div>
+    <div class="col-md-7">
+      <h2>Product Name:{{object.name}}</h2>
+      <h5>Minimum Bid price: {{object.min_bid_price}}Tk</h5>
+
+      <h5>Auction End Time{{object.auctionEndTime}}</h5>
+      <h5>Product Description: {{object.description}}</h5>
+      <br>
+      <a href="{% url 'bidamount' object.pk %}" role="button" class="btn btn-primary">Bid this</a>
+      <br>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+{% endblock main-content %}
+
