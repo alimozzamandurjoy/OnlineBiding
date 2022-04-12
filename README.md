@@ -13,7 +13,6 @@
 6. Pillow==9.1.0
 7. sqlparse==0.4.2
 8. tzdata==2022.1
-
 # ss 
 
 ![Screenshot from 2022-04-10 20-24-59](https://user-images.githubusercontent.com/42358866/162624139-8b8affc2-e129-4eb4-9f2a-c560ee2c0f12.png)
